@@ -2,8 +2,13 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const userController = require('./controllers/UserController');
+const { default: mongoose } = require('mongoose');
 
 const app = express();
+
+const MONGO_URI =
+  'mongodb+srv://Wunder:wunderpus@wunder.ldeokyo.mongodb.net/?retryWrites=true&w=majority';
+mongoose.connect(MONGO_URI);
 
 app.use(express.json());
 app.use(cors());
@@ -38,7 +43,7 @@ app.use((err, _req, res) => {
     message: { err: 'An unknown error occured.' },
   };
   const { log, status, message } = Object.assign(defaultErr, err);
-  console.log(log);
+  console.log('ERROR: ', log);
   return res.status(status).send(message);
 });
 

@@ -7,15 +7,14 @@ const userController = {};
 userController.getParks = (req, res, next) => {
   // Placeholder 'wunderpus' for finding the user
   // Change this if it's not the name of the user in the database/if we end up adding more users
+  console.log('Searching for user...');
   User.findOne({ name: 'Wunderpus' })
     .then((user) => {
-      if (user) {
-        res.locals.parks = user;
-        return next();
-      }
+      console.log('Found User: ', user);
+      res.locals.parks = user;
+      return next();
     })
     .catch((err) => {
-      console.log('User not found');
       return next({ message: 'Error in getParks' });
     });
 };
