@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const User = require('../models/UserModel.js');
+const User = require('../models/userModel.js');
 
 const userController = {};
 
@@ -10,13 +10,13 @@ userController.getParks = (req, res, next) => {
   User.findOne({ name: 'Wunderpus' })
     .then((user) => {
       if (user) {
-        res.locals.parks = user.parks;
-        next();
+        res.locals.parks = user;
+        return next();
       }
     })
     .catch((err) => {
       console.log('User not found');
-      next({ message: 'Error in getParks' });
+      return next({ message: 'Error in getParks' });
     });
 };
 
