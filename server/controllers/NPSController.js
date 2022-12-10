@@ -6,11 +6,19 @@ const NPSController = {};
 NPSController.getParkCodes = async (_req, res, next) => {
   try {
     const result = await axios.get(
-      `http://developer.nps.gov/api/v1/parks?api_key=${API_KEY}&limit=638`
+      `http://developer.nps.gov/api/v1/parks?api_key=${API_KEY}&limit=600`
     );
     const parkCodes = {};
     for (const park of result.data.data) {
-      parkCodes[park.name] = park.parkCode;
+      if (
+        // park.designation.includes('National Park & Preserve') ||
+        // park.designation.includes('National Parks') ||
+        park.designation.includes('National Park') ||
+        park.name.includes('Samoa') ||
+        park.name.includes('Redwood')
+      ) {
+        parkCodes[park.name] = park.parkCode;
+      }
     }
     res.locals.parkCodes = parkCodes;
     return next();
