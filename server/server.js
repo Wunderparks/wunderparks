@@ -1,11 +1,12 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use(express.static('client'));
+app.use('/', express.static(path.join(__dirname, '../client/public')));
 
 /**
  * TODO
@@ -14,6 +15,12 @@ app.use(express.static('client'));
  * [x] Handle Errors
  *
  */
+
+// app.get('/', (_req, res) => {
+//   res.status(200).sendFile(path.join(__dirname, '../client/public/index.html'));
+// });
+
+app.use('/build', express.static(path.join(__dirname, '../build')));
 
 app.use((_req, res) => res.sendStatus(404));
 
