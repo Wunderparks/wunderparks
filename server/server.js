@@ -1,7 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const userController = require('./controllers/UserController');
+const userRouter = require('./routers/userRouter');
+const NPSRouter = require('./routers/NPSRouter');
 const { default: mongoose } = require('mongoose');
 
 const app = express();
@@ -12,18 +13,12 @@ mongoose.connect(MONGO_URI);
 
 app.use(express.json());
 app.use(cors());
-// app.use(express.static('build'));
-// app.use(express.static(path.resolve(__dirname, '../client/public/index.html')));
 
-app.get('/parks', userController.getParks, (_req, res) => {
-  return res.status(200).json(res.locals.parks);
-});
+// Set up routers for '/NPS'
+app.use('/NPS', NPSRouter);
 
-/**
- * TODO
- *
- *
- */
+// Set up routers for '/user'
+app.use('/user', userRouter);
 
 // Handle serving of static files
 app.use('/build', express.static(path.join(__dirname, '../build')));
