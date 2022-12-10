@@ -1,0 +1,53 @@
+@import 'modals.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(62, 82, 69);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.25) 1px,
+    transparent 1px,
+    transparent 6px
+  );
+  font-family: 'Roboto', sans-serif;
+  background-size: 4px 4px;
+}
+
+h1 {
+  color: white;
+}
+
+img {
+  filter: grayscale(10);
+  // min-width: 7%;
+  // width: 7%;
+  padding: 8px;
+  border-radius: 30px;
+  flex-shrink: 0;
+  width: 106px;
+  height: 148px;
+  // box-shadow: 0 2px 5px black;
+  margin: 2px;
+  transition-duration: 700ms;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    filter: none;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 0 auto;
+  padding: 20px 50px;
+}
