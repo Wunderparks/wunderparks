@@ -5,17 +5,14 @@ const useInput = (init) => {
   const onChange = (e) => {
     setValue(e.target.value);
   };
-    //return the value with the onChange function instead of setValue;
+  //return the value with the onChange function instead of setValue;
   return [value, onChange];
 };
 
 const Sidebar = ({ setData }) => {
-
-
-
-  return (
-    <div id='sidebar'>
-      <
-    </div>
-  )
-}
+  // return (
+  //   <div id='sidebar'>
+  //     <h1>
+  //   </div>
+  // )
+};
