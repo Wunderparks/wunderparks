@@ -1,19 +1,33 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
+const userController = require('./controllers/UserController');
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use(express.static('client'));
+// app.use(express.static('build'));
+// app.use(express.static(path.resolve(__dirname, '../client/public/index.html')));
+
+app.get('/parks', userController.getParks, (_req, res) => {
+  return res.status(200).json(res.locals.parks);
+});
 
 /**
  * TODO
- * [x] Serve static files (ask Aalok/Elvin where those live)
- * [x] Handle 404s
- * [x] Handle Errors
+ *
  *
  */
+
+// Handle serving of static files
+app.use('/build', express.static(path.join(__dirname, '../build')));
+
+app.get('/', (_req, res) => {
+  return res
+    .status(200)
+    .sendFile(path.join(__dirname, '../client/public/index.html'));
+});
 
 app.use((_req, res) => res.sendStatus(404));
 
