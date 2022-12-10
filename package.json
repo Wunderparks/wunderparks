@@ -4,12 +4,12 @@
   "version": "1.0.0",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack-dev-server .",
+    "start": "NODE_ENV=production nodemon server/server.js",
     "dev": "NODE_ENV=development nodemon server/server.js & NODE_ENV=development webpack serve",
-    "build": "Webpack .",
+    "build": "NODE_ENV=production webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
     "front": "NODE_ENV=development webpack-dev-server --open",
-    "back": "nodemon ./server/server.js"
+    "back": "NODE_ENV=development nodemon ./server/server.js"
   },
   "repository": {
     "type": "git",
