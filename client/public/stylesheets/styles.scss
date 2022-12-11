@@ -1,5 +1,6 @@
 @import 'modals.scss';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import 'sidebar.scss';
 
 body {
   display: flex;
@@ -15,6 +16,11 @@ body {
   );
   font-family: 'Roboto', sans-serif;
   background-size: 4px 4px;
+}
+
+.app {
+  display: flex;
+
 }
 
 h1 {

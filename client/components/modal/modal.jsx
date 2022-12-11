@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Modal = (props) => {
   if (!props.show) {
@@ -17,7 +18,12 @@ const Modal = (props) => {
 
   // send fetch request to DB to get user info
   // useEffect(() => {
-  //   fetch(`http://localhost:3000/user/`{parkCode})
+
+  // axios.all([
+  //   axios.get({'http://localhost:3000/user'})
+  // ])
+
+  //   fetch(`http://localhost:3000/user/`{parkCode}) 
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setUserData(data);
@@ -39,6 +45,7 @@ const Modal = (props) => {
       <div className="content" onClick={(e) => e.stopPropagation()}>
         <div className="header">
           <h3 className="title">{props.parkName + ' National Park'}</h3>
+          <h3>park code is {props.parkCode}</h3>
           <button className="close" onClick={props.onClose}>
             X
           </button>

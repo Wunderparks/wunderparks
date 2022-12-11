@@ -3,6 +3,7 @@ import Icon from './Icon.jsx';
 
 // import in the images.js file
 import images from '../public/images.js';
+import parkCodes from '../public/parkcodes.js';
 
 function IconMaker() {
   // console.log(images);
@@ -20,7 +21,16 @@ function IconMaker() {
 
   const parksArr = [];
   for (let park in images) {
-    parksArr.push(<Icon key={park} park={park} imgLink={images[park]} />);
+    let parkCode;
+
+    Object.keys(parkCodes).forEach((element) => {
+      if (element.toLowerCase().includes(park.toLowerCase())) {
+        parkCode = parkCodes[element];
+      }
+    });
+    parksArr.push(
+      <Icon key={park} park={park} imgLink={images[park]} parkCode={parkCode} />
+    );
     // console.log('link :', imgLink/)
   }
 
