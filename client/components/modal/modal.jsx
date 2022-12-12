@@ -18,27 +18,56 @@ const Modal = (props) => {
 
   // send fetch request to DB to get user info
   useEffect(() => {
-    // axios.all([
-    //   axios.get({'http://localhost:3000/user'})
-    // ])
+    fetch(`http://localhost:3000/NPS/modalInfo/${props.parkCode}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setNpsData(data)
+        console.log('data from NPS get request: ', data)
+      });
 
     fetch(`http://localhost:3000/user/${props.parkCode}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log('data in the modal is: ', data);
-        setUserData(data);
+        // console.log('data in the modal is: ', data);
+        setUserData(data)
+        // console.log('user data: ', data);
       })
       .catch((err) => console.log('error getting user data', err));
   }, []);
 
-  // declare parkActivities array, initialized to empty arr
-  const parkActivitiesList = [];
   // iterate over activities completed in park activities
-  for (let i = 0; i < testData.parkActivities.length; i++) {
-    // create list items for each of these activities
-    // push to parkActivities arr
-    parkActivitiesList.push(<li>{testData.parkActivities[i]}</li>);
+  // function parksActivitiesExist() {
+  //   // declare parkActivities array, initialized to empty arr
+  //   const parkActivitiesList = [];
+  //   for (let i = 0; i < userData.activitiesCompleted.length; i++) {
+  //     // create list items for each of these activities
+  //     // push to parkActivities arr
+  //     parkActivitiesList.push(<li>{userData.activitiesCompleted[i]}</li>);
+  //   }
+  //   return (
+  //     <p className="park_activities">
+  //     Activities Completed:
+  //     <ul>{parkActivitiesList}</ul>
+  //   </p>
+  //   );
+  // }
+
+  // declare a function that checks if userData is null
+  function userDataExists() {
+    // console.log(userData);
+    return (
+      <div className="user_info">
+        USER info from database
+        <p className="date_visited">Date Visited: {userData.date}</p>
+        <p className="user_rating">User Rating: {testData.rating}</p>
+        <p className="user_notes">User Notes: {userData.notes}</p>
+        {/* {parksActivitiesExist()} */}
+        <hr></hr>
+      </div>
+    );
   }
+  // this is where we put the div for userdata
+  // if null, return null
 
   return (
     <div className="modal" onClick={props.onClose}>
@@ -51,17 +80,7 @@ const Modal = (props) => {
           </button>
         </div>
         <div className="body">
-          <div className="user_info">
-            USER info from database
-            <p className="date_visited">Date Visited: {userData.date}</p>
-            <p className="user_rating">User Rating: {testData.rating}</p>
-            <p className="user_notes">User Notes: {userData.notes}</p>
-            {/* <p className="park_activities">
-              Activities Completed:
-              <ul>{parkActivitiesList}</ul>
-            </p> */}
-          </div>
-          <hr></hr>
+          {userDataExists()}
           <div className="api_data">API data about specific park</div>
         </div>
         <div className="push"></div>
