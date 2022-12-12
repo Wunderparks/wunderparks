@@ -1,0 +1,46 @@
+$box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+
+.modal {
+  z-index: 99;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+  color: black;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: $box-shadow;
+
+  .content {
+    min-height: 100%;
+    margin-bottom: -20px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .close {
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(62, 82, 69);
+    color: white;
+  }
+
+  .push,
+  .footer {
+    height: 20px;
+  }
+}
