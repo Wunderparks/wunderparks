@@ -28,7 +28,8 @@ body {
 
 h1 {
   color: white;
-  text-align: center;;
+  text-align: center;
+  ;
 }
 
 
@@ -55,6 +56,7 @@ h1 {
 .color {
   filter: none;
 }
+
 .main {
   overflow: scroll;
 }
@@ -70,4 +72,5 @@ h1 {
   margin: 0 auto;
   padding: 20px 50px;
   overflow: scroll;
+  height: 70%;
 }

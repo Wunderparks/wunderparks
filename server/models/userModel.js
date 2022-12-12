@@ -10,10 +10,3 @@ const userSchema = new Schema(
 );
 
 module.exports = mongoose.model('user', userSchema);
-// parksVisited:
-// yose: {
-//   rating: Number,
-//   date: Date,
-//   notes: String,
-//   activitiesCompleted: Array}
-// acad: {

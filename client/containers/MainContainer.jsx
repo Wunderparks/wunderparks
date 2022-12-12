@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import IconMaker from '../components/IconMaker.jsx';
+import BasicExample from '../components/ProgressBar.jsx';
 
 // declare MainContainer function
 const MainContainer = (props) => {
