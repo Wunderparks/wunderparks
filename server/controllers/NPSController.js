@@ -39,5 +39,26 @@ NPSController.getPark = async (req, res, next) => {
     return next(err);
   }
 };
+NPSController.getModalInfo = async (req, res, next) => {
+  try {
+    const park = res.locals.parkData;
+    const { parkCode } = req.params;
+    const webcam = await axios.get(
+      `https://developer.nps.gov/api/v1/webcams?parkCode=${parkCode}&api_key=${API_KEY}`
+    );
+    const modalInfo = {
+      description: park.description,
+      latLong: park.latLong,
+      states: park.states,
+      photo: park.images[0].url,
+      altText: park.images[0].altText,
+      webcam: webcam.data.data[0].url,
+    };
+    res.locals.modalInfo = modalInfo;
+    next();
+  } catch (err) {
+    next(err);
+  }
+};
 
 module.exports = NPSController;
