@@ -27,9 +27,10 @@ const Icon = (iconData) => {
       <img
         src={iconData.imgLink}
         id={iconData.park}
+        className={iconData.className}
         onClick={(e) => {
-          console.log('image clicked');
-          console.log('parkCode is ', iconData.parkCode);
+          // console.log('image clicked');
+          // console.log('parkCode is ', iconData.parkCode);
           setShow(true);
         }}
       />

@@ -4,20 +4,19 @@
 
 .app {
   margin: none;
-  height:inherit;
+  height: inherit;
 }
+
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgb(62, 82, 69);
-  background-image: repeating-linear-gradient(
-    -45deg,
-    rgba(255, 255, 255, 0.25),
-    rgba(255, 255, 255, 0.25) 1px,
-    transparent 1px,
-    transparent 6px
-  );
+  background-image: repeating-linear-gradient(-45deg,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.25) 1px,
+      transparent 1px,
+      transparent 6px);
   font-family: 'Roboto', sans-serif;
   background-size: 4px 4px;
 }
@@ -42,15 +41,17 @@ img {
   margin: 2px;
   transition-duration: 700ms;
 
-  .color {
-    filter: none;
-  }
+
 
   &:hover {
     cursor: pointer;
     transform: scale(1.2);
     filter: none;
   }
+}
+
+.color {
+  filter: none;
 }
 
 .container {
