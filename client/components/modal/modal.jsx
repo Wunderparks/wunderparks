@@ -39,7 +39,7 @@ const Modal = (props) => {
 
   // iterate over activities completed in park activities
   function parksActivitiesExist() {
-    // declare parkActivities array, initialized to empty arr
+    // declare parkActivities array, initialized to strongpty arr
     const parkActivitiesList = [];
     if (userData.activitiesCompleted) {
       for (let i = 0; i < userData.activitiesCompleted.length; i++) {
@@ -49,7 +49,7 @@ const Modal = (props) => {
       }
       return (
         <p className="park_activities">
-          Activities Completed:
+          <span className="label">Activities Completed: </span>
           <ul>{parkActivitiesList}</ul>
         </p>
       );
@@ -61,15 +61,28 @@ const Modal = (props) => {
   // declare a function that checks if userData is null
   function userDataExists() {
     console.log('npsData inside userDataExists :', npsData);
-    return (
-      <div className="user_info">
-        <h4>User Log</h4>
-        {/* {props.parkCode} */}
-        <p className="date_visited">Date Visited: {userData.date}</p>
-        <p className="user_notes">Notes: {userData.notes}</p>
-        {parksActivitiesExist()}
-      </div>
-    );
+    if (userData.date) {
+      return (
+        <div className="user_info">
+          {/* <h4>User Log</h4> */}
+          {/* {props.parkCode} */}
+          <div className="left">
+            <p className="date_visited">
+              <span className="label">Date Visited: </span>
+              <br />
+              {userData.date}
+            </p>
+            <p className="user_notes">
+              <span className="label">Notes: </span>
+              <br />
+              {userData.notes}
+            </p>
+          </div>
+          {parksActivitiesExist()}
+        </div>
+      );
+    }
+    else return null;
   }
 
   function npsDataComponent() {
@@ -85,15 +98,15 @@ const Modal = (props) => {
   // if null, return null
 
   return (
-    <div className="modal" onClick={props.onClose}>
+    <div className={`modal ${props.className}`} onClick={props.onClose}>
       <div className="content" onClick={(e) => e.stopPropagation()}>
         <div className="header">
           <h3 className="title">
-            {props.parkName + ' National Park '}
-            <span className="state">({stateObj[npsData.states]})</span>
+            {props.parkName + ' National Park '} <br/>
+            <small className="state">{stateObj[npsData.states]}</small>
           </h3>
           <button className="close" onClick={props.onClose}>
-            X
+            Close
           </button>
         </div>
         <div className="body">
@@ -104,8 +117,7 @@ const Modal = (props) => {
         <div className="push"></div>
       </div>
       <div className="footer">
-        {npsData.latLong}
-        <span className="copywrite">WÜNDERPARK ©</span>
+        <a className="copywrite">WÜNDERPARK ©</a>
       </div>
     </div>
   );

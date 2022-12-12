@@ -6,6 +6,7 @@ const Icon = (iconData) => {
   const [show, setShow] = React.useState(false);
   const [parkName, setName] = React.useState(iconData.park);
   const [parkCode, setCode] = React.useState(iconData.parkCode);
+  const [visible, setVisible] = React.useState('');
 
   return (
 
@@ -15,15 +16,16 @@ const Icon = (iconData) => {
         id={iconData.park}
         className={`${iconData.className} imageIcon`}
         onClick={(e) => {
-
           setShow(true);
+          setVisible('visible');
         }}
       />
       <Modal
-        onClose={() => setShow(false)}
+        onClose={() => {return setShow(false); setVisible('')}}
         show={show}
         parkName={parkName}
         parkCode={parkCode}
+        className={visible}
       />
     </div>
   );

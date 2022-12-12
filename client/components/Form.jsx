@@ -1,5 +1,7 @@
 import React, { _useEffect, useState } from 'react';
+// import { CodeSlash } from 'react-bootstrap-icons';
 import parkcodes from '../public/parkcodes.js';
+// import ParkTally from './parkTally.jsx';
 
 // const useInput = (init) => {
 //   const [value, setValue] = useState(init);
@@ -10,7 +12,7 @@ import parkcodes from '../public/parkcodes.js';
 //   return [value, onChange];
 // };
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   const [date, setDate] = useState('');
   const [activities, setActivities] = useState({
     biking: false,
@@ -34,6 +36,7 @@ const Sidebar = () => {
     activities[item] = !activities[item];
     // console.log('activities state is: ', activities);
   }
+  console.log(props)
 
   function savePark(e) {
     //prevents form submission without park and date selected
@@ -52,7 +55,8 @@ const Sidebar = () => {
         body: JSON.stringify({ parkCode, date, activitiesDone, notes }),
       })
         .then((res) => res.json())
-        .then((data) => {})
+        .then((data) => {
+        })
         .catch((err) => console.log('AddPark fetch POST to api: ERROR: ', err));
     }
   }
@@ -61,14 +65,17 @@ const Sidebar = () => {
   const parkOptions = [];
   // iterate through the parkcodes js file
   for (let park in parkcodes) {
+    const {codes} = props
+    if (!codes.includes(parkcodes[park])) {
     parkOptions.push(<option value={parkcodes[park]}>{park}</option>);
+    }
   }
 
   // render an option element for Select, pass in the parkCode value as value, and give the label/input as the parkCode key
 
   return (
-    <div id="sidebar">
-      {/* <form className="form"> */}
+    <div id="form">
+      <form className="form">
       <h2>Log a trip</h2>
       <div class="select-dropdown">
         <select
@@ -186,7 +193,8 @@ const Sidebar = () => {
       </button>
       <br></br>
       {error ? <span className="errorMsg">{error}</span> : null}
-      {/* </form> */}
+      </form>
+      {/* <ParkTally /> */}
     </div>
   );
 };

@@ -1,3 +1,10 @@
+
+#form {
+  width: 250px;
+  height: 600px;
+  margin-top: 80px;
+  margin-left: 30px;
+
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 #sidebar {
@@ -23,6 +30,20 @@
     // flex-direction:
   }
 }
+
+
+.visited_list {
+  width: 210px;
+  height: 100px;
+  margin-top: 710px;
+  margin-left: 30px;
+  padding: 30px 40px;
+  background-color: #d2d2cf3e;
+  position: fixed;
+  border-radius: 15px;
+  overflow: scroll;
+}
+
 
 h2 {
   text-align: center;
