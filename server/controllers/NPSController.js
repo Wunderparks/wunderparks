@@ -39,10 +39,12 @@ NPSController.getPark = async (req, res, next) => {
     return next(err);
   }
 };
+
 NPSController.getModalInfo = async (req, res, next) => {
   try {
     const park = res.locals.parkData;
     const { parkCode } = req.params;
+    const imgIdx = Math.floor(Math.random() * park.images.length);
     const webcam = await axios.get(
       `https://developer.nps.gov/api/v1/webcams?parkCode=${parkCode}&api_key=${API_KEY}`
     );
