@@ -39,9 +39,10 @@ const Sidebar = (props) => {
   console.log(props)
 
   function savePark(e) {
+    e.preventDefault();
     //prevents form submission without park and date selected
     if (parkCode == '' || date === '') {
-      setError('Please make sure a park and date is selected');
+      setError('Please make sure a park and date are selected');
     } else {
       //puts activities checked off into array
       const activitiesDone = [];
@@ -55,8 +56,8 @@ const Sidebar = (props) => {
         body: JSON.stringify({ parkCode, date, activitiesDone, notes }),
       })
         .then((res) => res.json())
-        .then((data) => {
-        })
+        .then(window.location.reload(false))
+        .then((data) => {})
         .catch((err) => console.log('AddPark fetch POST to api: ERROR: ', err));
     }
   }
@@ -191,7 +192,6 @@ const Sidebar = (props) => {
       <button type="submit" id="submit" onClick={savePark}>
         Save Park
       </button>
-      <br></br>
       {error ? <span className="errorMsg">{error}</span> : null}
       </form>
       {/* <ParkTally /> */}

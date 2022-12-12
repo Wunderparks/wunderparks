@@ -1,15 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+ h2 {
+  font-size: 20px;
+   margin-bottom: 15px;
+   padding: 2px 15px 6px 15px;
+   margin-top: 0;
+   background-color: #070a015e;
+   border-radius: 15px;
+
+ }
+.visited_list {
+  width: 210px;
+  height: 200px;
+  margin-top: 840px;
+  margin-left: 80px;
+  padding: 15px 40px;
+  background-color: #d2d2cf3e;
+  position: fixed;
+  border-radius: 15px;
+    color: white;
+      font-family: 'Oswald', sans-serif;
+
+ 
+
+  .listItems {
+    // list-style: square;
+    text-align: center;
+    font-size: 20px;
+    max-height: 150px;
+    overflow: scroll;
+  }
+}
+
 
 #form {
   width: 250px;
-  height: 600px;
-  margin-top: 80px;
-  margin-left: 30px;
-
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-
-#sidebar {
-  width: 250px;
-  height: 610px;
+  height: 620px;
   margin-top: 100px;
   margin-left: 80px;
   padding: 10px 20px;
@@ -20,8 +45,9 @@
   font-family: 'Oswald', sans-serif;
   letter-spacing: 2px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  > * {
-    margin: 7px;
+
+  h3 {
+    margin: 10px 0;
   }
 
   .checkboxes {
@@ -30,20 +56,6 @@
     // flex-direction:
   }
 }
-
-
-.visited_list {
-  width: 210px;
-  height: 100px;
-  margin-top: 710px;
-  margin-left: 30px;
-  padding: 30px 40px;
-  background-color: #d2d2cf3e;
-  position: fixed;
-  border-radius: 15px;
-  overflow: scroll;
-}
-
 
 h2 {
   text-align: center;
@@ -112,12 +124,12 @@ input[type='date']:focus {
 
 .comments {
   resize: vertical;
-  width: 90%;
-  // background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
+  width: 235px;
+  // backgound: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
   line-height: 25px;
   padding: 7px;
   overflow: scroll;
-  height: 25%;
+  height: 150px;
   // perspective: 1500px;
   box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.25),
     0 2px 4px -1px rgba(0, 0, 0, 0.05);
@@ -128,18 +140,21 @@ input[type='date']:focus {
   border-style: none solid solid none;
   border-width: medium 1px 1px medium;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) inset;
-  color: #d2cccc;
+  color: #000000;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1em;
   line-height: 1.4em;
   padding: 5px 8px;
   transition: background-color 0.2s ease 0s;
+  margin-bottom: 10px;
 }
 
 .errorMsg {
-  color: rgb(85, 2, 2);
+  color: rgb(0, 0, 0);
+  margin-left: 17px;
   text-align: center;
-  font-size: 16px;
+  font-size: 12px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .right {
@@ -149,6 +164,7 @@ input[type='date']:focus {
 #submit {
   background-color: #ffffff;
   border-radius: 0.25rem;
+  width: 50%;
   border: none;
   box-sizing: border-box;
   color: #111827;
@@ -156,9 +172,9 @@ input[type='date']:focus {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   letter-spacing: 2px;
   padding: 0.45rem 0.35rem;
-  position: absolute;
-  left: 30%;
-  margin-top: none !important;
+  // position: relative;
+  margin-left: 25%;
+  // margin: 0 auto;
   text-align: center;
   cursor: pointer;
 }
