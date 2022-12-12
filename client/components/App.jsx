@@ -6,11 +6,11 @@ import MainContainer from '../containers/MainContainer.jsx';
 
 const App = () => (
   <div className="app">
-    <div className='left'>
-      <h1>WÜNDER PARKS</h1>
-      <Sidebar />
+    <Sidebar />
+    <div className="right">
+      <h1> WÜNDER PARKS</h1>
+      <MainContainer />
     </div>
-    <MainContainer />
     <Modal />
   </div>
 );

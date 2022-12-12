@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import 'sidebar.scss';
 
+.app {
+  margin: none;
+  height:inherit;
+}
 body {
   display: flex;
   align-items: center;
@@ -25,6 +29,7 @@ body {
 
 h1 {
   color: white;
+  text-align: center;
 }
 
 img {
