@@ -8,26 +8,26 @@ const App = () => {
   // let codes = [];
   const [codes, setCodes] = useState([]);
 
+  const handleUpdate = (newData) => {
+    setData([newData, ...data]);
+  };
+
   useEffect(() => {
     fetch('http://localhost:3000/user/', {
       method: 'GET',
       headers: { 'Content-Type': 'Application/JSON' },
     })
       .then((res) => res.json())
-      // .then(console.log('chaining works'))
       .then((data) => {
-        console.log('data:', data);
         setCodes(data);
-        console.log('codes: ', codes);
       })
       .catch((err) => console.log('AddPark fetch POST to api: ERROR: ', err));
   }, []);
 
-  console.log('codes after fetch, ', codes);
 
   return (
     <div className="app">
-      <Sidebar />
+      <Sidebar setData={handleUpdate} />
       <div className="right">
         <h1> WÜNDER PARKS</h1>
         <MainContainer codes={codes} />

@@ -52,9 +52,9 @@ NPSController.getModalInfo = async (req, res, next) => {
       description: park.description,
       latLong: park.latLong,
       states: park.states,
-      photo: park.images[0].url,
-      altText: park.images[0].altText,
-      webcam: webcam.data.data[0].url,
+      photo: park.images[imgIdx].url,
+      altText: park.images[imgIdx].altText,
+      webcam: (webcam.data.data.length > 0 ? webcam.data.data[0].url : null),
     };
     res.locals.modalInfo = modalInfo;
     next();

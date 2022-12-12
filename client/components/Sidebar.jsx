@@ -30,9 +30,9 @@ const Sidebar = () => {
   const [error, setError] = useState(null);
 
   function toggleActivities(item) {
-    console.log('checkbox for item clicked', item);
+    // console.log('checkbox for item clicked', item);
     activities[item] = !activities[item];
-    ('activities state is: ', activities);
+    // console.log('activities state is: ', activities);
   }
 
   function savePark(e) {

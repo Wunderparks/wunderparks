@@ -1,13 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
+
 $box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
 
+h3 {
+  margin: 0;
+}
+
 .modal {
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
   z-index: 99;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 600px;
-  height: 450px;
+  // height: 450px;
   display: flex;
   flex-direction: column;
   background-color: beige;
@@ -22,25 +31,81 @@ $box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     // justify-content: space-between;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .title {
+        font-size: 30px;
+        // margin-left: 80px;
+      }
+
+      .close {
+        height: 30px;
+        width: 30px;
+        border-radius: 10px;
+        border: none;
+        background-color: rgb(62, 82, 69);
+        color: white;
+      }
+    }
+
+    .body {
+      .user_info {
+        display: flex;
+        flex-direction: column;
+
+        .date_visited {}
+
+        .user_notes {}
+      }
+
+      .api_data {
+
+        h4 {
+          font-size: 25px;
+          text-align: center;
+          margin: 0;
+        }
+
+        .description {
+          font-size: 20px;
+          text-align: center;
+          // width: 40%;
+        }
+
+        .latLong {}
+
+        .photo {
+          width: 100%;
+          // max-width: 500px;
+        }
+
+        .states {}
+      }
+    }
+
+    .push,
+    .footer {
+      height: 20px;
+      display: flex;
+      justify-content: space-between;
+
+      // .copywrite, 
+      // .lagLong {
+      //   width: 100px;
+      // }
+    }
   }
 
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
 
-  .close {
-    height: 30px;
-    width: 30px;
-    border-radius: 10px;
-    border: none;
-    background-color: rgb(62, 82, 69);
-    color: white;
-  }
 
-  .push,
-  .footer {
-    height: 20px;
-  }
+
+
+
+
+
+
 }
