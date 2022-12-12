@@ -32,7 +32,7 @@ const Sidebar = () => {
   function toggleActivities(item) {
     console.log('checkbox for item clicked', item);
     activities[item] = !activities[item];
-    console.log('activities state is: ', activities);
+    ('activities state is: ', activities);
   }
 
   function savePark(e) {
@@ -45,7 +45,7 @@ const Sidebar = () => {
       for (let item in activities) {
         activities[item] && activitiesDone.push(item);
       }
-
+      console.log({ parkCode, date, activitiesDone, notes });
       fetch(`http://localhost:3000/user/${parkCode}`, {
         method: 'POST',
         headers: { 'Content-Type': 'Application/JSON' },

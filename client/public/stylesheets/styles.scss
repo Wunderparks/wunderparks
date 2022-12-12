@@ -34,16 +34,17 @@ h1 {
 
 img {
   filter: grayscale(10);
-  // min-width: 7%;
-  // width: 7%;
   padding: 8px;
   border-radius: 30px;
   flex-shrink: 0;
   width: 106px;
   height: 148px;
-  // box-shadow: 0 2px 5px black;
   margin: 2px;
   transition-duration: 700ms;
+
+  .color {
+    filter: none;
+  }
 
   &:hover {
     cursor: pointer;

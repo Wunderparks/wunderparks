@@ -36,12 +36,11 @@ userController.getUser = (req, res, next) => {
 // Add a park to a user's completed parks
 userController.addPark = async (req, res, next) => {
   try {
-    const { parkCode } = req.params;
+    const parkCode = req.params.parkCode;
     const newPark = {
-      rating: req.body.rating,
       date: req.body.date,
       notes: req.body.notes,
-      activitiesCompleted: req.body.acts,
+      activitiesCompleted: req.body.activitiesDone,
     };
     const user = await User.findOne({ name: 'Aalok' });
     if (user) {
@@ -59,7 +58,7 @@ userController.addPark = async (req, res, next) => {
 
 // Get parks completed array for icon coloring on landing page
 userController.getParks = (req, res, next) => {
-  User.findOne({ name: 'Wunderpus' })
+  User.findOne({ name: 'Aalok' })
     .then((user) => {
       res.locals.parks = Object.keys(user.parksVisited); // <-- send back array of parks completed
       return next();
