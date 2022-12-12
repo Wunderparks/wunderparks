@@ -1,21 +1,23 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useEffect, useState, useLayoutEffect } from 'react';
 import Modal from './modal/modal.jsx';
 import Sidebar from './Sidebar.jsx';
 
 import MainContainer from '../containers/MainContainer.jsx';
 
 const App = () => {
-  let codes = [];
-  useLayoutEffect(() => {
-    fetch(`http://localhost:3000/user/`, {
+  // let codes = [];
+  const [codes, setCodes] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/user/', {
       method: 'GET',
       headers: { 'Content-Type': 'Application/JSON' },
     })
       .then((res) => res.json())
-      .then(console.log('chaining works'))
+      // .then(console.log('chaining works'))
       .then((data) => {
         console.log('data:', data);
-        codes = data;
+        setCodes(data);
         console.log('codes: ', codes);
       })
       .catch((err) => console.log('AddPark fetch POST to api: ERROR: ', err));
