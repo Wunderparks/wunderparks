@@ -27,7 +27,9 @@ const App = () => {
     <div className="app">
       <SidebarContainer codes={codes} />
       <div className="right">
-        <h1> WÜNDER PARKS</h1>
+        <div className="float">
+          <h1> WÜNDER PARKS</h1>
+        </div>
         <MainContainer codes={codes} />
       </div>
     </div>

@@ -28,12 +28,10 @@ body {
 
 h1 {
   color: white;
-  text-align: center;
+  text-align: center;;
 }
 
-h2 {
-  margin: 0;
-}
+
 
 .imageIcon {
   filter: grayscale(10);
@@ -57,8 +55,12 @@ h2 {
 .color {
   filter: none;
 }
+.main {
+  overflow: scroll;
+}
 
 .container {
+  overflow: sroll;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -67,4 +69,5 @@ h2 {
   gap: 16px;
   margin: 0 auto;
   padding: 20px 50px;
+  overflow: scroll;
 }
