@@ -6,8 +6,8 @@ import images from '../public/images.js';
 import parkCodes from '../public/parkcodes.js';
 
 function IconMaker(props) {
-  const {codes} = props;
-  console.log('props in iconmaker: ', props)
+  const { codes } = props;
+  console.log('props in iconmaker: ', props);
   const parksArr = [];
   for (let park in images) {
     let parkCode;
@@ -23,7 +23,7 @@ function IconMaker(props) {
         park={park}
         imgLink={images[park]}
         parkCode={parkCode}
-        // className={codes.includes(parkCode) && 'color'}
+        className={codes.includes(parkCode) && 'color'}
       />
     );
     // console.log('link :', imgLink/)
