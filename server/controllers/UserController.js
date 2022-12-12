@@ -20,6 +20,7 @@ userController.createUser = async (req, res, next) => {
 
 // Get user info
 userController.getUser = (req, res, next) => {
+  // User.findOne({ name: req.body.name})
   User.findOne({ name: 'Aalok' })
     .then((user) => {
       if (user) {
@@ -42,6 +43,7 @@ userController.addPark = async (req, res, next) => {
       notes: req.body.notes,
       activitiesCompleted: req.body.activitiesDone,
     };
+    // const user = await User.findOne({ name: req.body.name})
     const user = await User.findOne({ name: 'Aalok' });
     if (user) {
       const parksVisited = { ...user.parksVisited, [parkCode]: newPark };
@@ -58,6 +60,7 @@ userController.addPark = async (req, res, next) => {
 
 // Get parks completed array for icon coloring on landing page
 userController.getParks = (req, res, next) => {
+  // User.findOne({ name: req.body.name})
   User.findOne({ name: 'Aalok' })
     .then((user) => {
       res.locals.parks = Object.keys(user.parksVisited); // <-- send back array of parks completed
