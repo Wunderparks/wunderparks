@@ -39,6 +39,7 @@ NPSController.getPark = async (req, res, next) => {
     return next(err);
   }
 };
+
 NPSController.getModalInfo = async (req, res, next) => {
   try {
     const park = res.locals.parkData;

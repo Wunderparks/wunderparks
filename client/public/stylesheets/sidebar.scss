@@ -1,12 +1,28 @@
+
 #form {
   width: 250px;
   height: 600px;
   margin-top: 80px;
   margin-left: 30px;
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+#sidebar {
+  width: 250px;
+  height: 610px;
+  margin-top: 100px;
+  margin-left: 80px;
   padding: 10px 20px;
   background-color: #d2d2cf3e;
   position: fixed;
   border-radius: 15px;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 2px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  > * {
+    margin: 7px;
+  }
 
   .checkboxes {
     display: grid;
@@ -14,6 +30,7 @@
     // flex-direction:
   }
 }
+
 
 .visited_list {
   width: 210px;
@@ -28,16 +45,42 @@
 }
 
 
+h2 {
+  text-align: center;
+}
+
+input[type='date'] {
+  display: block;
+  width: 75%;
+  position: relative;
+  padding: 0.75rem 3.25rem 0.75rem 0.5rem;
+
+  font-size: 0.75rem;
+  font-family: monospace;
+
+  border: 1px solid #8292a2;
+  border-radius: 0.25rem;
+  background: white;
+  cursor: pointer;
+}
+
+input[type='date']:focus {
+  outline: none;
+  border-color: #3acfff;
+  box-shadow: 0 0 0 0.25rem rgba(0, 120, 250, 0.1);
+}
+
 .select-dropdown {
   position: relative;
   background-color: #e6e6e6;
   width: auto;
   float: left;
   max-width: 100%;
-  border-radius: 2px;
+  border-radius: 0.25rem;
 
   select {
-    font-family: "Helvetica", arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.4em;
     font-size: 1rem;
     font-weight: 200;
     max-width: 100%;
@@ -54,7 +97,7 @@
   }
 
   &:after {
-    content: " ";
+    content: ' ';
     position: absolute;
     top: 50%;
     margin-top: -2px;
@@ -67,8 +110,31 @@
   }
 }
 
+.comments {
+  resize: vertical;
+  width: 90%;
+  // background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
+  line-height: 25px;
+  padding: 7px;
+  overflow: scroll;
+  height: 25%;
+  // perspective: 1500px;
+  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.25),
+    0 2px 4px -1px rgba(0, 0, 0, 0.05);
 
-
+  border-color: -moz-use-text-color #ffffff #ffffff -moz-use-text-color;
+  border-image: none;
+  border-radius: 0.25rem;
+  border-style: none solid solid none;
+  border-width: medium 1px 1px medium;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) inset;
+  color: #d2cccc;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.4em;
+  padding: 5px 8px;
+  transition: background-color 0.2s ease 0s;
+}
 
 .errorMsg {
   color: rgb(85, 2, 2);
@@ -80,3 +146,32 @@
   margin-left: 350px;
 }
 
+#submit {
+  background-color: #ffffff;
+  border-radius: 0.25rem;
+  border: none;
+  box-sizing: border-box;
+  color: #111827;
+  // font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  letter-spacing: 2px;
+  padding: 0.45rem 0.35rem;
+  position: absolute;
+  left: 30%;
+  margin-top: none !important;
+  text-align: center;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: rgb(249, 250, 251);
+}
+
+#submit:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+#submit:focus-visible {
+  box-shadow: none;
+}
