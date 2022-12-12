@@ -1,8 +1,7 @@
-#sidebar {
+#form {
   width: 250px;
   height: 600px;
   margin-top: 80px;
-  // border: 1px solid black;
   margin-left: 30px;
   padding: 10px 20px;
   background-color: #d2d2cf3e;
@@ -14,6 +13,18 @@
     grid-template-columns: 25px 100px 25px 100px;
     // flex-direction:
   }
+}
+
+.visited_list {
+  width: 210px;
+  height: 100px;
+  margin-top: 710px;
+  margin-left: 30px;
+  padding: 30px 40px;
+  background-color: #d2d2cf3e;
+  position: fixed;
+  border-radius: 15px;
+  overflow: scroll;
 }
 
 
@@ -68,3 +79,4 @@
 .right {
   margin-left: 350px;
 }
+

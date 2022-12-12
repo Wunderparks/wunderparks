@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useLayoutEffect } from 'react';
-import Modal from './modal/modal.jsx';
-import Sidebar from './Sidebar.jsx';
-
+import SidebarContainer from '../containers/SidebarContainer.jsx';
 import MainContainer from '../containers/MainContainer.jsx';
 
 const App = () => {
@@ -27,12 +25,11 @@ const App = () => {
 
   return (
     <div className="app">
-      <Sidebar setData={handleUpdate} />
+      <SidebarContainer codes={codes} />
       <div className="right">
         <h1> WÜNDER PARKS</h1>
         <MainContainer codes={codes} />
       </div>
-      <Modal />
     </div>
   );
 };
