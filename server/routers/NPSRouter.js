@@ -11,4 +11,13 @@ NPSRouter.get('/parks/:parkCode', NPSController.getPark, (_req, res) => {
   return res.status(200).send(res.locals.parkData);
 });
 
+NPSRouter.get(
+  '/modalInfo/:parkCode',
+  NPSController.getPark,
+  NPSController.getModalInfo,
+  (_req, res) => {
+    return res.status(200).send(res.locals.modalInfo);
+  }
+);
+
 module.exports = NPSRouter;
