@@ -4,12 +4,13 @@ const path = require('path');
 const userRouter = require('./routers/userRouter');
 const NPSRouter = require('./routers/NPSRouter');
 const { default: mongoose } = require('mongoose');
-
+require('dotenv').config();
 const app = express();
 
 const MONGO_URI =
-  'mongodb+srv://Wunder:wunderpus@wunder.ldeokyo.mongodb.net/?retryWrites=true&w=majority';
-mongoose.connect(MONGO_URI);
+  `mongodb+srv://${process.env.MONGO_UN}:${process.env.MONGO_PW}@cluster0.cn9cfqs.mongodb.net/?retryWrites=true&w=majority`
+  // 'mongodb+srv://Wunder:wunderpus@wunder.ldeokyo.mongodb.net/?retryWrites=true&w=majority';
+mongoose.connect(MONGO_URI, () => console.log('Connected to MongoDB'));
 
 app.use(express.json());
 app.use(cors());
