@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import ProgressBar from 'react-bootstrap/ProgressBar';
+import React, { useState, useEffect } from "react";
+import ProgressBar from "react-bootstrap/ProgressBar";
 
 function WithLabelExample(props) {
   const now = Math.round((props.percent.length / 63) * 100, 2);
