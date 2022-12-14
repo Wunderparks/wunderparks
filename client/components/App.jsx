@@ -84,16 +84,16 @@ const App = () => {
 
   return (
     <div className='app'>
-      {/* {renderToPage()} */}
+      {renderToPage()}
       {/* <LogIn /> */}
-      {/* <CreateUser /> */}
-      <SidebarContainer codes={codes} />
-      <div className='right'>
-        <div className='float'>
-          <h1> WÜNDER PARKS</h1>
-        </div>
-        <MainContainer codes={codes} />
-      </div>
+      {/* {/* <CreateUser /> */}
+      {/* // <SidebarContainer codes={codes} />
+      // <div className='right'>
+      //   <div className='float'>
+      //     <h1> WÜNDER PARKS</h1>
+      //   </div>
+      //   <MainContainer codes={codes} />
+      // </div> */}
     </div>
   );
 };
