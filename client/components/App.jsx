@@ -7,23 +7,34 @@ import Welcome from './modal/Welcome.jsx';
 
 const App = () => {
   // let codes = [];
-  const [codes, setCodes] = useState([]);
+  const [codes, setCodes] = useState({});
+
+  /*
+  const parksVisited = {
+    parkCode: [{date: Date string?, activitiesDone: [activities], notes: string}],
+    zion: [],
+    yosemite: [{trip1}]
+  }
+  */
 
   const handleUpdate = (newData) => {
     setData([newData, ...data]);
   };
 
-  useEffect(() => {
-    fetch('http://localhost:3000/user/', {
-      method: 'GET',
-      headers: { 'Content-Type': 'Application/JSON' },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setCodes(data);
-      })
-      .catch((err) => console.log('AddPark fetch POST to api: ERROR: ', err));
-  }, []);
+  //state for username
+  const [userInfo, setUserInfo] = useState('');
+
+  // useEffect(() => {
+  //   fetch('http://localhost:3000/user/', {
+  //     method: 'GET',
+  //     headers: { 'Content-Type': 'Application/JSON' },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setCodes(data);
+  //     })
+  //     .catch((err) => console.log('AddPark fetch POST to api: ERROR: ', err));
+  // }, []);
 
   // States for rendering the different compontents
   const [welcome, setWelcome] = useState(true);
@@ -40,17 +51,23 @@ const App = () => {
           setWelcome={setWelcome}
           welcome={welcome}
           setCreateAccount={setCreateAccount}
+          setUserInfo={setUserInfo}
+          setCodes={setCodes}
+          setShowWebsite={setShowWebsite}
         />
       );
     } else if (showLogIn === true) {
       return <LogIn />;
     } else if (showWebsite === true) {
       return (
-        <div className="right">
-          <div className="float">
-            <h1> WÜNDER PARKS</h1>
+        <div>
+          {/* <SidebarContainer codes={codes} /> */}
+          <div className="right">
+            <div className="float">
+              <h1> WÜNDER PARKS</h1>
+            </div>
+            <MainContainer codes={codes} />
           </div>
-          <MainContainer codes={codes} />
         </div>
       );
     }

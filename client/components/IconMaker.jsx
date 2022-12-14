@@ -24,7 +24,7 @@ function IconMaker(props) {
         park={park}
         imgLink={images[park]}
         parkCode={parkCode}
-        className={codes.includes(parkCode) ? 'color' : undefined}
+        className={codes.parkCode ? 'color' : undefined} //codes.includes(parkCode)
       />
     );
     // console.log('link :', imgLink/)

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
-function LogIn() {
+function LogIn(props) {
+  const [username, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+
   return (
     <div className="login-modal">
       <h4>Log in:</h4>

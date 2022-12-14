@@ -9,18 +9,25 @@ function CreateUser(props) {
 
   const sendInfo = (e) => {
     const requestBody = { username, password, name };
-    fetch('http://localhost:8080/user', {
+    console.log(requestBody);
+
+    fetch('http://localhost:3000/user', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      mode: 'no-cors',
+      // mode: 'no-cors',
       body: JSON.stringify(requestBody),
     })
       .then((data) => data.json())
       .then((data) => {
+        // on successful create info
         console.log(data);
+        props.setUserInfo(data.username); // save username to state
+        props.setCodes(data.parksVisited); // save parkvisited to state
+        props.setShowWebsite(true);
+        props.setCreateAccount(false);
       })
       .catch((err) => {
         console.log(err);
@@ -76,8 +83,22 @@ function CreateUser(props) {
           }}
         />
       </div>
-      <div className="button-container" onClick={(e) => sendInfo(e)}>
-        <input type="submit" className="submit-button" />
+      <div className="button-container">
+        <button
+          className="submit-button"
+          onClick={(e) => {
+            sendInfo(e);
+          }}
+        >
+          submit
+        </button>
+        {/* <button
+          onClick={(e) => {
+            sendInfo(e);
+          }}
+        >
+          hello
+        </button> */}
       </div>
       <div className="close-container">
         <a
