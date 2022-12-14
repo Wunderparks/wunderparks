@@ -1,6 +1,7 @@
 @import 'modals.scss';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import 'sidebar.scss';
+@import 'user-modal.scss';
 
 .app {
   margin: none;
@@ -12,27 +13,25 @@ body {
   align-items: center;
   justify-content: center;
   background-color: rgb(62, 82, 69);
-  background-image: repeating-linear-gradient(-45deg,
-      rgba(255, 255, 255, 0.25),
-      rgba(255, 255, 255, 0.25) 1px,
-      transparent 1px,
-      transparent 6px);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.25) 1px,
+    transparent 1px,
+    transparent 6px
+  );
   font-family: 'Roboto', sans-serif;
   background-size: 4px 4px;
 }
 
 .app {
   display: flex;
-
 }
 
 h1 {
   color: white;
   text-align: center;
-  ;
 }
-
-
 
 .imageIcon {
   filter: grayscale(10);
@@ -43,8 +42,6 @@ h1 {
   height: 148px;
   margin: 2px;
   transition-duration: 700ms;
-
-
 
   &:hover {
     cursor: pointer;
@@ -73,4 +70,38 @@ h1 {
   padding: 20px 50px;
   overflow: scroll;
   height: 70%;
+}
+
+//Landing page styling
+
+.login-signup {
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  z-index: 2;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 250px;
+  min-width: 250px;
+  height: 50%;
+  min-height: 200px;
+  max-height: 245px;
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+  color: black;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: $box-shadow;
+  transition: opacity 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+
+  h1 {
+    color: rgb(62, 82, 69);
+  }
+  p {
+    text-align: center;
+  }
 }

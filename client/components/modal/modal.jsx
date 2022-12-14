@@ -81,8 +81,7 @@ const Modal = (props) => {
           {parksActivitiesExist()}
         </div>
       );
-    }
-    else return null;
+    } else return null;
   }
 
   function npsDataComponent() {
@@ -102,7 +101,7 @@ const Modal = (props) => {
       <div className="content" onClick={(e) => e.stopPropagation()}>
         <div className="header">
           <h3 className="title">
-            {props.parkName + ' National Park '} <br/>
+            {props.parkName + ' National Park '} <br />
             <small className="state">{stateObj[npsData.states]}</small>
           </h3>
           <button className="close" onClick={props.onClose}>
