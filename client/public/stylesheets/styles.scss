@@ -1,6 +1,6 @@
-@import 'modals.scss';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import 'sidebar.scss';
+@import "modals.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import "sidebar.scss";
 
 .app {
   margin: none;
@@ -12,27 +12,25 @@ body {
   align-items: center;
   justify-content: center;
   background-color: rgb(62, 82, 69);
-  background-image: repeating-linear-gradient(-45deg,
-      rgba(255, 255, 255, 0.25),
-      rgba(255, 255, 255, 0.25) 1px,
-      transparent 1px,
-      transparent 6px);
-  font-family: 'Roboto', sans-serif;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.25) 1px,
+    transparent 1px,
+    transparent 6px
+  );
+  font-family: "Roboto", sans-serif;
   background-size: 4px 4px;
 }
 
 .app {
   display: flex;
-
 }
 
 h1 {
   color: white;
   text-align: center;
-  ;
 }
-
-
 
 .imageIcon {
   filter: grayscale(10);
@@ -43,8 +41,6 @@ h1 {
   height: 148px;
   margin: 2px;
   transition-duration: 700ms;
-
-
 
   &:hover {
     cursor: pointer;

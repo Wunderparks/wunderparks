@@ -1,47 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
-.visited_list {
-  width: 210px;
-  height: 230px;
-  margin-top: 760px;
-  margin-left: 80px;
-  padding: 15px 40px;
-  background-color: #d2d2cf3e;
-  position: fixed;
-  border-radius: 15px;
-  color: white;
-  font-family: 'Oswald', sans-serif;
-  
-  h2 {
-    margin: 0;
-    color: ghostwhite;
-    font-size: 18px;
-  }
+.sidebarContainer {
+  // width: 250px;
+  // height: 620px;
+  // margin-top: 100px;
+  // margin-left: 80px;
+  margin: 80px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
 
-
-
-  .listItems {
-    // list-style: square;
-    text-align: center;
-    font-size: 20px;
-    margin-top: 10px;
-    max-height: 190px;
-    overflow: scroll;
+  .checkboxes {
+    display: grid;
+    grid-template-columns: 25px 100px 25px 100px;
+    // flex-direction:
   }
 }
 
-
-#form {
+.form {
   width: 250px;
   height: 620px;
-  margin-top: 100px;
-  margin-left: 80px;
   padding: 10px 20px;
   background-color: #d2d2cf3e;
-  position: fixed;
+  // position: fixed;
   border-radius: 15px;
   color: white;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   letter-spacing: 2px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
@@ -53,26 +36,47 @@
     background-color: #070a015e;
     border-radius: 15px;
     text-align: center;
-
   }
 
   h3 {
     margin: 10px 0;
   }
+}
 
-  .checkboxes {
-    display: grid;
-    grid-template-columns: 25px 100px 25px 100px;
-    // flex-direction:
+.visited_list {
+  width: 210px;
+  height: 230px;
+  // margin-top: 760px;
+  // margin-left: 80px;
+  padding: 15px 40px;
+  background-color: #d2d2cf3e;
+  // position: fixed;
+  border-radius: 15px;
+  color: white;
+  font-family: "Oswald", sans-serif;
+
+  h2 {
+    margin: 0;
+    color: ghostwhite;
+    font-size: 18px;
+  }
+
+  .listItems {
+    // list-style: square;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+    // max-height: 190px;
+    overflow: scroll;
   }
 }
 
 // ÷
 
-input[type='date'] {
+input[type="date"] {
   display: block;
   width: 75%;
-  position: relative;
+  // position: relative;
   padding: 0.75rem 3.25rem 0.75rem 0.5rem;
 
   font-size: 0.75rem;
@@ -84,14 +88,14 @@ input[type='date'] {
   cursor: pointer;
 }
 
-input[type='date']:focus {
+input[type="date"]:focus {
   outline: none;
   border-color: #3acfff;
   box-shadow: 0 0 0 0.25rem rgba(0, 120, 250, 0.1);
 }
 
 .select-dropdown {
-  position: relative;
+  // position: relative;
   background-color: #e6e6e6;
   width: auto;
   float: left;
@@ -99,7 +103,7 @@ input[type='date']:focus {
   border-radius: 0.25rem;
 
   select {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.4em;
     font-size: 1rem;
     font-weight: 200;
@@ -117,8 +121,8 @@ input[type='date']:focus {
   }
 
   &:after {
-    content: ' ';
-    position: absolute;
+    content: " ";
+    // position: absolute;
     top: 50%;
     margin-top: -2px;
     right: 8px;
@@ -149,7 +153,7 @@ input[type='date']:focus {
   border-width: medium 1px 1px medium;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) inset;
   color: #000000;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
   line-height: 1.4em;
   padding: 5px 8px;
@@ -162,11 +166,11 @@ input[type='date']:focus {
   margin-left: 17px;
   text-align: center;
   font-size: 12px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .right {
-  margin-left: 350px;
+  // margin-left: 350px;
 }
 
 #submit {
@@ -177,7 +181,7 @@ input[type='date']:focus {
   box-sizing: border-box;
   color: #111827;
   // font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   letter-spacing: 2px;
   padding: 0.45rem 0.35rem;
   // position: relative;
@@ -203,13 +207,12 @@ input[type='date']:focus {
 .progress-bar {
   background-color: rgb(68, 98, 68);
   height: 15px;
-
 }
 
 .progress {
   background: ghostwhite;
   height: 15px;
-  margin-bottom: 10px;
-  font-size: 15px;
+  margin-top: 10px;
+  font-size: 12px;
   border-radius: 100px;
 }
