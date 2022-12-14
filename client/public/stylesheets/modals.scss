@@ -27,8 +27,7 @@ h3 {
   border-radius: 20px;
   padding: 20px;
   box-shadow: $box-shadow;
-  transition:
-    opacity 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  transition: opacity 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946);
 
   .content {
     min-height: 100%;
@@ -80,15 +79,13 @@ h3 {
           // font-family: 'Kalam', cursive;
           font-weight: 700;
         }
-
       }
 
       .api_data {
         display: flex;
         flex-direction: column;
         justify-content: center;
-          text-align: center;
-
+        text-align: center;
 
         h4 {
           font-size: 25px;
@@ -98,7 +95,6 @@ h3 {
 
         .description {
           font-size: 20px;
-
         }
 
         .photo {
@@ -106,7 +102,6 @@ h3 {
           max-width: 500px;
           margin: 0 auto;
         }
-
       }
     }
 
@@ -117,6 +112,72 @@ h3 {
       justify-content: right;
     }
   }
-
 }
 
+.login-modal {
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  z-index: 2;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 250px;
+  min-width: 250px;
+  height: 50%;
+  min-height: 200px;
+  max-height: 245px;
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+  color: black;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: $box-shadow;
+  transition: opacity 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  .input-container,
+  .button-container {
+    margin: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    .label {
+      // font-size: 1.1em;
+      margin: 10px;
+      margin-bottom: 15px;
+      text-decoration: underline;
+      // font-family: 'Kalam', cursive;
+      font-weight: 700;
+    }
+  }
+  .close-container {
+    text-align: center;
+    a {
+      text-decoration: none;
+      color: rgb(62, 82, 69);
+      font-size: 14px;
+    }
+  }
+  h4 {
+    font-size: 25px;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.login-input {
+  padding: 3px;
+  margin: 2px;
+  border: solid 1px rgb(62, 82, 69);
+  border-radius: 4px;
+}
+
+.submit-button {
+  padding: 6px 60px;
+  font-size: 16px;
+  background-color: rgb(62, 82, 69);
+  border: solid 1px rgb(62, 82, 69);
+  color: white;
+  border-radius: 5px;
+}
