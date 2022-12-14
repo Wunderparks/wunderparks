@@ -1,7 +1,7 @@
-@import 'modals.scss';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import 'sidebar.scss';
-@import 'user-modal.scss';
+@import "modals.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import "sidebar.scss";
+@import "user-modal.scss";
 
 .app {
   margin: none;
@@ -20,7 +20,7 @@ body {
     transparent 1px,
     transparent 6px
   );
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-size: 4px 4px;
 }
 
@@ -75,7 +75,7 @@ h1 {
 //Landing page styling
 
 .login-signup {
-  font-family: 'Signika Negative', sans-serif;
+  font-family: "Signika Negative", sans-serif;
   font-size: 16px;
   font-weight: 400;
   z-index: 2;
