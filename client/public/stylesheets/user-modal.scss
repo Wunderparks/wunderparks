@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;700&display=swap');
+$box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+
+.user-modal {
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  z-index: 2;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 700px;
+  min-width: 400px;
+  height: 50%;
+  min-height: 550px;
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+  color: black;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: $box-shadow;
+  transition: opacity 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+
+  //   .input-container {
+  //   }
+}
