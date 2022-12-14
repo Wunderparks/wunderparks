@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 const userRouter = require('./routers/userRouter');
@@ -12,6 +13,7 @@ const MONGO_URI =
   // 'mongodb+srv://Wunder:wunderpus@wunder.ldeokyo.mongodb.net/?retryWrites=true&w=majority';
 mongoose.connect(MONGO_URI, () => console.log('Connected to MongoDB'));
 
+app.use(bodyParser.json());
 app.use(express.json());
 app.use(cors());
 
@@ -32,7 +34,7 @@ app.get('/', (_req, res) => {
 
 app.use((_req, res) => res.sendStatus(404));
 
-app.use((err, _req, res) => {
+app.use((err, _req, res, next) => {
   const defaultErr = {
     log: 'Caught Unknown middleware error.',
     status: 500,
@@ -43,5 +45,4 @@ app.use((err, _req, res) => {
   return res.status(status).send(message);
 });
 
-console.log('listening on 3000...');
-app.listen(3000);
+app.listen(3000, () => console.log('Listening on 3000...'));

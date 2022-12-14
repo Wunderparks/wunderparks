@@ -25,6 +25,7 @@
     "@testing-library/dom": "^8.19.0",
     "@testing-library/jest-dom": "^5.16.5",
     "axios": "^1.2.1",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.1",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.2",

@@ -12,7 +12,7 @@ userRouter.get(
   }
 );
 
-userRouter.get('/', userController.getParks, (_req, res) => {
+userRouter.get('/', userController.verifyUser, userController.getParks, (_req, res) => {
   return res.status(200).json(res.locals.parks);
 });
 
@@ -20,7 +20,7 @@ userRouter.post('/:parkCode', userController.addPark, (_req, res) => {
   return res.status(200).json(res.locals.park);
 });
 
-userRouter.post('/', userController.createUser, (_req, res) => {
+userRouter.post('/', userController.getUser, userController.createUser, (_req, res) => {
   return res.status(200).json(res.locals.newUser);
 });
 
