@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 
-function CreateUser() {
+function CreateUser(props) {
   const [name, setName] = useState('');
   const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
+
+  //function to send info to the database
 
   const sendInfo = (e) => {
     const requestBody = { username, password, name };
@@ -23,6 +25,13 @@ function CreateUser() {
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  //function to toggle the close button
+
+  const closeBtn = () => {
+    props.setWelcome(true);
+    props.setCreateAccount(false);
   };
 
   return (
@@ -71,7 +80,14 @@ function CreateUser() {
         <input type="submit" className="submit-button" />
       </div>
       <div className="close-container">
-        <a href="#">Close</a>
+        <a
+          href="#"
+          onClick={(e) => {
+            closeBtn();
+          }}
+        >
+          Close
+        </a>
       </div>
     </div>
   );
