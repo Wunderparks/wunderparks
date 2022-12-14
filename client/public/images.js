@@ -6,7 +6,7 @@ const images = {
   'Big Bend': 'https://i.imgur.com/jC0AsJ9.png',
   Biscayne: 'https://i.imgur.com/zgS0Yn8.png',
   'Black Canyon': 'https://i.imgur.com/QZuss1y.png',
-  'Bryce Canyons': 'https://i.imgur.com/wMM3wkH.png',
+  'Bryce Canyon': 'https://i.imgur.com/wMM3wkH.png',
   Canyonlands: 'https://i.imgur.com/4KenNzH.png',
   'Capitol Reef': 'https://i.imgur.com/f0pKQu0.png',
   'Carlsbad Caverns': 'https://i.imgur.com/Fud1s2i.png',
