@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;700&display=swap");
 $box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
 
-.user-modal {
-  font-family: 'Signika Negative', sans-serif;
+.login-modal {
+  font-family: "Signika Negative", sans-serif;
   font-size: 16px;
   font-weight: 400;
   z-index: 2;
@@ -12,10 +12,11 @@ $box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
   top: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
-  max-width: 700px;
-  min-width: 400px;
+  max-width: 250px;
+  min-width: 250px;
   height: 50%;
-  min-height: 550px;
+  min-height: 200px;
+  max-height: 245px;
   display: flex;
   flex-direction: column;
   background-color: beige;
@@ -24,7 +25,47 @@ $box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   box-shadow: $box-shadow;
   transition: opacity 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  .input-container,
+  .button-container {
+    margin: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    .label {
+      // font-size: 1.1em;
+      margin: 10px;
+      margin-bottom: 15px;
+      text-decoration: underline;
+      // font-family: 'Kalam', cursive;
+      font-weight: 700;
+    }
+  }
+  .close-container {
+    text-align: center;
+    a {
+      text-decoration: none;
+      color: rgb(62, 82, 69);
+      font-size: 14px;
+    }
+  }
+  h4 {
+    font-size: 25px;
+    text-align: center;
+    margin: 0;
+  }
+}
 
-  //   .input-container {
-  //   }
+.login-input {
+  padding: 3px;
+  margin: 2px;
+  border: solid 1px rgb(62, 82, 69);
+  border-radius: 4px;
+}
+
+.submit-button {
+  padding: 6px 60px;
+  font-size: 16px;
+  background-color: rgb(62, 82, 69);
+  border: solid 1px rgb(62, 82, 69);
+  color: white;
+  border-radius: 5px;
 }
