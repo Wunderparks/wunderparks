@@ -9,15 +9,7 @@ const app = express();
 
 const MONGO_URI =
   'mongodb+srv://Wunder:wunderpus@wunder.ldeokyo.mongodb.net/?retryWrites=true&w=majority';
-
-const db = process.env.NODE_ENV === 'test' ? 'Testing' : 'WunderThunderGoose';
-
-mongoose.connect(MONGO_URI, {
-  useNewURLParser: true,
-  dbName: db,
-})
-.then(() => console.log('Connected to Mongo DB.'))
-.catch((err) => console.log(err));
+mongoose.connect(MONGO_URI);
 
 app.use(express.json());
 app.use(cors());
