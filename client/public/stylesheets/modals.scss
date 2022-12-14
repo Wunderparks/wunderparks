@@ -1,7 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;700&display=swap");
 $box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
-
+:root {
+  --white: white;
+  --black: black;
+  --bg-green-color: rgb(62, 82, 69);
+  --beige: beige;
+}
 h3 {
   margin: 0;
 }
@@ -22,8 +27,8 @@ h3 {
   min-height: 550px;
   display: flex;
   flex-direction: column;
-  background-color: beige;
-  color: black;
+  background-color: var(--beige);
+  color: var(--black);
   border-radius: 20px;
   padding: 20px;
   box-shadow: $box-shadow;
@@ -52,8 +57,8 @@ h3 {
         // width: 30px;
         border-radius: 10px;
         border: none;
-        background-color: rgb(62, 82, 69);
-        color: white;
+        background-color: var(--bg-green-color);
+        color: var(--white);
         align-self: flex-start;
       }
     }
