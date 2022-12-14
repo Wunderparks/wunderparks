@@ -1,13 +1,13 @@
 import React from 'react';
 
-function Welcome() {
+function Welcome(props) {
   return (
     <div className="login-signup">
       <h1>Welcome to Wunderpark!</h1>
       <button
         className="submit-button"
         onClick={(e) => {
-          showCorrectModal('showLogIn');
+          props.showCorrectModal('showLogIn');
         }}
       >
         Log In
@@ -16,7 +16,7 @@ function Welcome() {
       <button
         className="submit-button"
         onClick={(e) => {
-          showCorrectModal('showCreateAccount');
+          props.showCorrectModal('showCreateAccount');
         }}
       >
         Create Account
