@@ -11,11 +11,11 @@ const Modal = (props) => {
   const [userData, setUserData] = useState({});
   const [npsData, setNpsData] = useState([]);
 
-  const testData = {
-    date: '12/10/22',
-    rating: 5,
-    parkActivities: ['Biking', 'Camping', 'Fishing', 'Hiking', 'Swimming'],
-  };
+  // const testData = {
+  //   date: '12/10/22',
+  //   rating: 5,
+  //   parkActivities: ['Biking', 'Camping', 'Fishing', 'Hiking', 'Swimming'],
+  // };
 
   // send fetch request to DB to get user info
   useEffect(() => {
