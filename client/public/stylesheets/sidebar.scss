@@ -1,5 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
+:root{
+--form-visited-list-bg-color: #d2d2cf3e;
+--form-color: white;
+--form-box-shadow-color: rgba(0, 0, 0, 0.16);
+--h2-and-progress-bg-colors: ghostwhite;
+--visited-list-color: white;
+--form-h2-bg-color: #070a015e;
+--input-border-color: #8292a2;
+--input-border-focus-color:#3acfff;
+--input-bg-color:white;
+--input-focus-box-shadow:rgba(0, 120, 250, 0.1);
+--select-dropdown-bg-color:e6e6e6;
+--selected-dropdown-menu-bg-color:#e6e6e6;
+--selected-dropdown-after-border-top-color: #aaa;
+--white: #ffffff;
+--black: rgb(0, 0, 0);
+--comment-box-shadows-color-1:rgba(0, 0, 0, 0.5);
+--comment-box-shadows-color-2:rgba(0, 0, 0, 0.25);
+--comment-box-shadows-color-3:rgba(0, 0, 0, 0.05);
+--submit-hover-color:rgb(249, 250, 251);
+--progress-bar-color:rgb(68, 98, 68);
+}
+
 .sidebarContainer {
   // width: 250px;
   // height: 620px;
@@ -20,20 +43,20 @@
   width: 250px;
   height: 620px;
   padding: 10px 20px;
-  background-color: #d2d2cf3e;
+  background-color: var(--form-visited-list-bg-color);
   // position: fixed;
   border-radius: 15px;
-  color: white;
+  color: var(--form-color);
   font-family: "Oswald", sans-serif;
   letter-spacing: 2px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: var(--form-h2-bg-color) 0px 1px 4px;
 
   h2 {
     font-size: 20px;
     margin-bottom: 15px;
     padding: 2px 15px 6px 15px;
     margin-top: 0;
-    background-color: #070a015e;
+    background-color: var(--form-visited-list-bg-color);
     border-radius: 15px;
     text-align: center;
   }
@@ -49,15 +72,15 @@
   // margin-top: 760px;
   // margin-left: 80px;
   padding: 15px 40px;
-  background-color: #d2d2cf3e;
+  background-color: var(--form-visited-list-bg-color);
   // position: fixed;
   border-radius: 15px;
-  color: white;
+  color: var(--visited-list-color);
   font-family: "Oswald", sans-serif;
 
   h2 {
     margin: 0;
-    color: ghostwhite;
+    color: var(--h2-and-progress-bg-colors);
     font-size: 18px;
   }
 
@@ -82,21 +105,21 @@ input[type="date"] {
   font-size: 0.75rem;
   font-family: monospace;
 
-  border: 1px solid #8292a2;
+  border: 1px solid var(--input-border-color);
   border-radius: 0.25rem;
-  background: white;
+  background: var(--input-bg-color);
   cursor: pointer;
 }
 
 input[type="date"]:focus {
   outline: none;
-  border-color: #3acfff;
-  box-shadow: 0 0 0 0.25rem rgba(0, 120, 250, 0.1);
+  border-color: var(--input-border-focus-color);
+  box-shadow: 0 0 0 0.25rem var(--input-focus-box-shadow);
 }
 
 .select-dropdown {
   // position: relative;
-  background-color: #e6e6e6;
+  background-color: var(--select-dropdown-bg-color);
   width: auto;
   float: left;
   max-width: 100%;
@@ -130,7 +153,7 @@ input[type="date"]:focus {
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid #aaa;
+    border-top: 5px solid var(--selected-dropdown-after-border-top-color);
   }
 }
 
@@ -143,16 +166,16 @@ input[type="date"]:focus {
   overflow: scroll;
   height: 150px;
   // perspective: 1500px;
-  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.25),
-    0 2px 4px -1px rgba(0, 0, 0, 0.05);
+  box-shadow: 5px 5px 5px 0 var(--comment-box-shadows-color-1), 0 1px 10px 0 var(--comment-box-shadows-color-2),
+    0 2px 4px -1px var(--comment-box-shadows-color-3);
 
-  border-color: -moz-use-text-color #ffffff #ffffff -moz-use-text-color;
+  border-color: -moz-use-text-color var(--white) var(--white) -moz-use-text-color;
   border-image: none;
   border-radius: 0.25rem;
   border-style: none solid solid none;
   border-width: medium 1px 1px medium;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) inset;
-  color: #000000;
+  color: var(--black);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
   line-height: 1.4em;
@@ -162,7 +185,7 @@ input[type="date"]:focus {
 }
 
 .errorMsg {
-  color: rgb(0, 0, 0);
+  color: var(--black);
   margin-left: 17px;
   text-align: center;
   font-size: 12px;
@@ -174,7 +197,7 @@ input[type="date"]:focus {
 }
 
 #submit {
-  background-color: #ffffff;
+  background-color: var(--white);
   border-radius: 0.25rem;
   width: 50%;
   border: none;
@@ -192,7 +215,7 @@ input[type="date"]:focus {
 }
 
 #submit:hover {
-  background-color: rgb(249, 250, 251);
+  background-color: var(--submit-hover-color);
 }
 
 #submit:focus {
@@ -205,12 +228,12 @@ input[type="date"]:focus {
 }
 
 .progress-bar {
-  background-color: rgb(68, 98, 68);
+  background-color: var(--progress-bar-color);
   height: 15px;
 }
 
 .progress {
-  background: ghostwhite;
+  background: var(--h2-and-progress-bg-colors);
   height: 15px;
   margin-top: 10px;
   font-size: 12px;
